@@ -1,131 +1,203 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Harga App Premium</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Harga App Premium</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffe6f0;
+  color: #4a2c2a;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f8b9cf; /* pink muda */
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* SEARCH DI HEADER */
+.search-box {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#clearBtn {
+  border: none;
+  background: #eee;
+  border-radius: 8px;
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#clearBtn:hover {
+  background: #ddd;
+}
+
+/* CONTENT */
+.container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: start;
+  grid-auto-flow: dense; /* ⬅️ WAJIB */
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  padding: 0;
+}
+
+/* HEADER CARD (IQIYI, CANVA, dll) */
+.card h2 {
+  margin: 0;
+  padding: 14px;
+  text-align: center;
+  background: #ffc1d6;
+  color: #5a1f2f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* SUB PACKAGE (Sharing Standar, Premium, dll) */
+.package {
+  background: #ffe4ee;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: #5a1f2f;
+  border-top: 1px solid #ffd1e2;
+  border-bottom: 1px solid #ffd1e2;
+}
+
+/* BARIS HARGA */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #ffd6e6;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+/* HIGHLIGHT SEARCH */
+mark {
+  background: #ffeb7a;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 14px;
+  font-size: 12px;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header>
-    <img src="Untitled (Facebook Video) (1).jpg" alt="Logo" class="logo">
+
+<header>
+  <div class="header-top">
+    <img src="Untitled (Facebook Video) (1).jpg" class="logo">
     <div class="header-text">
       <h1>🐾 DAFTAR HARGA</h1>
       <p>tanyakan stock terlebih dahulu sebelum order 🛍️</p>
     </div>
-  </header>
+  </div>
 
-  <div class="container">
-    <!-- Informasi -->
-    <div class="card">
-      <h2>INFORMASI</h2>
-      <div class="price-row"><span>➛ <b>MEMBELI</b> = <b>SETUJU</b></span><span></span></div>
-      <div class="price-row"><span>➛ Payment first, sertakan bukti tf</span><span></span></div>
-      <div class="price-row"><span>➛ <b>CANCEL</b> = <b>HANGUS</b> <nav></nav>No cancel setelah akun diproses. </span><span></span></div>
-      <div class="price-row"><span>➛ <b>NO RUSH ORDER</b> <nav>Diproses sesuai antrian.</nav></span><span></span></div>
-      <div class="price-row"><span>➛ Proses garansi: 1-3 hari dan 3-7 jika massal</span><span></span></div>
-    </div>
+  <!-- SEARCH DI HEADER -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 Cari aplikasi, paket, atau harga...">
+    <button id="clearBtn">❌</button>
+  </div>
+</header>
 
-    <!-- Kontak -->
-    <div class="card">
-      <h2>KONTAK</h2>
-      <div class="price-row"><span>👩🏻‍💻 WA: <a href="https://wa.me/+6287777419025">+6287777419025</a> - Minsho</span><span></span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+<div class="container">
 
-    <!-- Sosmed -->
+  <!-- NETFLIX -->
     <div class="card">
-      <h2>SOSIAL MEDIA</h2>
-      <div class="price-row"><span>📲 Twitter: <a href="https://x.com/minshodesu">Hajimemashoo</a></span><span></span></div>
-      <div class="price-row"><span>📲 Instagram: <a href="https://www.instagram.com/minshodesu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Hajimemashoo</a></span><span></span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+      <h2>NETFLIX</h2>
 
-    <!-- Testimonials -->
-    <div class="card">
-      <h2>TESTIMONIALS</h2>
-      <div class="price-row"><span>Testimonials: <a href="https://x.com/hajimemashooo/status/1759450408840486987">Twitter</a></span><span></span></div>
-      <div class="price-row"><span>Testimonials: <a href="https://t.me/hajimemashooo">Telegram</a></span><span></span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+      <div class="package">Sharing 2U</div>
+      <div class="price-row"><span>1 Bulan</span><span>35K</span></div>
 
-    <!-- Iqiyi -->
-    <div class="card">
-      <h2>IQIYI</h2>
-      <div class="package">Sharing Standar</div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-      <div class="package">Sharing Premium</div>
-      <div class="price-row"><span>1 Bulan</span><span>18K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>35K</span></div>
-    </div>
-    
-    <!-- Canva -->
-    <div class="card">
-      <h2>CANVA</h2>
-      <div class="package">Member</div>
-      <div class="price-row"><span>1 Bulan</span><span>10K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>6 Bulan</span><span>22K</span></div>
-      <div class="price-row"><span>1 Tahun</span><span>30K</span></div>
-      <div class="price-row"><span>Lifetime</span><span>32K</span></div>
-    </div>
+      <div class="package">Sharing 1U</div>
+      <div class="price-row"><span>1 Hari</span><span>5K</span></div> 
+      <div class="price-row"><span>7 Hari</span><span>17K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>45K</span></div>
 
-    <!-- Spotify -->
-    <div class="card">
-      <h2>SPOTIFY</h2>
-      <div class="package">Famplan</div>
-      <div class="price-row"><span>1 bulan</span><span>16K</span></div>
-      <div class="price-row"><span>2 Bulan</span><span>26K</span></div>
-      <div class="package">Indplan</div>
-      <div class="price-row"><span>1 Bulan</span><span>20K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- Viu -->
-    <div class="card">
-      <h2>VIU</h2>
       <div class="package">Private</div>
-      <div class="price-row"><span>1 Bulan</span><span>8K</span></div>
-      <div class="price-row"><span>6 Bulan</span><span>25K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>180K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
 
-    <!-- Capcut Pro -->
-    <div class="card">
+  <!-- Capcut Pro -->
+    <div class="card wide">
       <h2>CAPCUT PRO</h2>
       <div class="package">Sharing</div>
-      <div class="price-row"><span>3U 1 Minggu</span><span>9K</span></div>
-      <div class="price-row"><span>3U 1 Bulan</span><span>13K</span></div>
-      <div class="price-row"><span>2U 1 Minggu</span><span>10K</span></div>
-      <div class="price-row"><span>2U 1 Bulan</span><span>17K</span></div>
+      <div class="price-row"><span>3 Hari</span><span>6K</span></div>
+      <div class="price-row"><span>7 Hari</span><span>15K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>20K</span></div>
       <div class="package">Private</div>
-      <div class="price-row"><span>1 Minggu</span><span>18K</span></div>
-      <div class="price-row"><span>1 Bulan</span><span>23K</span></div>
+      <div class="price-row"><span>1 Minggu</span><span>15K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>30K</span></div>
       <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- EDU APPS -->
-    <div class="card">
-      <h2>EDU APPS</h2>
-      <div class="package">Scribd</div>
-      <div class="price-row"><span>1 Bulan (Private)</span><span>20K</span></div>
-      <div class="price-row"><span>1 Bulan (Sharing)</span><span>15K</span></div>
-      <div class="package">Camscanner (Sharing)</div>
-      <div class="price-row"><span>3 Bulan</span><span>10K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>22K</span></div>
-      <div class="package">Microsoft (Famplan)</div>
-      <div class="price-row"><span>1 Bulan</span><span>12K</span></div>
-      <div class="package">Grammarly (Sharing)</div>
-      <div class="price-row"><span>1 Bulan</span><span>13K</span></div>
-      <div class="package">ILove PDF (Sharing)</div>
-      <div class="price-row"><span>3 Bulan</span><span>12K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>20K</span></div>
-      <div class="package">Quillbot (Sharing)</div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>21K</span></div>
     </div>
 
     <!-- ZOOM PRO -->
@@ -138,207 +210,211 @@
       <div class="price-row"><span>3 Hari</span><span>17K</span></div>
       <div class="price-row"><span>7 Hari</span><span>22K</span></div>
       <div class="price-row"><span>14 Hari</span><span>32K</span></div>
-      <div class="price-row"><span>1 Bulan</span><span>37K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
 
-    <!-- NETFLIX -->
-    <div class="card">
-      <h2>NETFLIX</h2>
-      <div class="package">Sharing 2U</div>
-      <div class="price-row"><span>1 Hari</span><span>5K</span></div> 
-      <div class="price-row"><span>7 Hari</span><span>15K</span></div>
+    <!-- Vidio -->
+    <div class="card wide">
+      <h2>VIDIO</h2>
+      <div class="package">Sharing TV</div>
+      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
+      <div class="package">Sharing Mobile</div>
+      <div class="price-row"><span>1 Bulan</span><span>22K</span></div>
+      <div class="package">Private TV</div>
       <div class="price-row"><span>1 Bulan</span><span>25K</span></div>
+      <div class="package">Private Mobile</div>
+      <div class="price-row"><span>1 Bulan</span><span>30K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
 
-      <div class="package">Sharing 1U</div>
-      <div class="price-row"><span>1 Hari</span><span>6K</span></div>
-      <div class="price-row"><span>7 Hari</span><span>17K</span></div>
+  <!-- Iqiyi -->
+    <div class="card wide">
+      <h2>IQIYI</h2>
+      <div class="package">Sharing</div>
+      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
+      <div class="package">Anti Limit</div>
+      <div class="price-row"><span>1 Bulan</span><span>18K</span></div>
+      <div class="package">Private</div>
       <div class="price-row"><span>1 Bulan</span><span>35K</span></div>
+    </div>
+    
+    <!-- Canva -->
+    <div class="card wide">
+      <h2>CANVA</h2>
+      <div class="package">Member</div>
+      <div class="price-row"><span>7 Hari</span><span>7K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>10K</span></div>
+      <div class="price-row"><span>2 Bulan</span><span>14K</span></div>
+      <div class="price-row"><span>6 Bulan</span><span>25K</span></div>
+      <div class="price-row"><span>1 Tahun</span><span>30K</span></div>
+    </div>
 
-      <div class="package">Semi-Private</div>
-      <div class="price-row"><span>1 Hari</span><span>8K</span></div>
-      <div class="price-row"><span>7 Hari</span><span>23K</span></div>
-      <div class="price-row"><span>1 Bulan</span><span>43K</span></div>
-
-      <div class="package">Private</div>
-      <div class="price-row"><span>1 Bulan</span><span>140K</span></div>
+     <!-- HBO GO, MAX -->
+    <div class="card">
+      <h2>HBO GO, MAX</h2>
+      <div class="package">Standard 1 Bulan</div>
+      <div class="price-row"><span>Sharing</span><span>30K</span></div>
+      <div class="price-row"><span>Private</span><span>85K</span></div>
+      <div class="package">Ultimate 1 Bulan</div>
+      <div class="price-row"><span>Sharing</span><span>35K</span></div>
+      <div class="price-row"><span>Private</span><span>130K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
 
-    <!-- DRAKOR ID -->
-    <div class="card">
-      <h2>DRAKOR ID</h2>
+     <!-- CHAT GPT -->
+    <div class="card wide">
+      <h2>CHAT GPT</h2>
       <div class="package">Sharing</div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>22K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- MOVIEBOX -->
-    <div class="card">
-      <h2>MOVIEBOX</h2>
-      <div class="package">Sharing Andro</div>
-      <div class="price-row"><span>1 Bulan</span><span>12K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>16K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>20K</span></div>
-      <div class="package">Sharing IOS</div>
-      <div class="price-row"><span>1 Bulan</span><span>13K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>20K</span></div>
-    </div>
-
-     <!-- Video Platinum -->
-    <div class="card">
-      <h2>VIDEO PLATINUM</h2>
+      <div class="price-row"><span>1 Hari</span><span>10K</span></div>
+      <div class="price-row"><span>7 Hari</span><span>35K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>50K</span></div>
       <div class="package">Private</div>
-      <div class="price-row"><span>1 Bulan (all device)</span><span>35K</span></div>
-      <div class="price-row"><span>1 Bulan (mobile)</span><span>30K</span></div>
-      <div class="package">Sharing 2U</div>
-      <div class="price-row"><span>1 Bulan (all device)</span><span>25K</span></div>
-      <div class="price-row"><span>1 Bulan (mobile)</span><span>20K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>250K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
 
-    <!-- YOUKU -->
+    <!-- QUILLBOT -->
     <div class="card">
-      <h2>YOUKU</h2>
+      <h2>QUILLBOT</h2>
       <div class="package">Sharing</div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>20K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>16K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+    <!-- DUOLINGO -->
+    <div class="card">
+      <h2>DUOLINGO</h2>
+      <div class="package">Sharing</div>
+      <div class="price-row"><span>1 Bulan</span><span>25K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+    <!-- LOK-LOK -->
+    <div class="card">
+      <h2>LOK-LOK</h2>
+      <div class="package">Sharing</div>
+      <div class="price-row"><span>1 Bulan</span><span>20K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+    <!-- DRAMABOX -->
+    <div class="card">
+      <h2>DRAMABOX</h2>
+      <div class="package">Sharing</div>
+      <div class="price-row"><span>1 Bulan</span><span>25K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+     <!-- Viu -->
+    <div class="card wide">
+      <h2>VIU</h2>
+      <div class="package">Private Unlim</div>
+      <div class="price-row"><span>1 Bulan</span><span>8K</span></div>
+      <div class="price-row"><span>6 Bulan</span><span>28K</span></div>
+      <div class="price-row"><span>12 Bulan</span><span>36K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
 
     <!-- WETV -->
     <div class="card">
       <h2>WETV</h2>
-      <div class="package">Sharing 6U (mobile only)</div>
-      <div class="price-row"><span>1 Hari</span><span>6K</span></div>
-      <div class="price-row"><span>3 Hari</span><span>8K</span></div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="package">Sharing 3U (all device)</div>
-      <div class="price-row"><span>1 Bulan</span><span>22K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- BSTATION -->
-    <div class="card">
-      <h2>BSTATION</h2>
       <div class="package">Sharing</div>
-      <div class="price-row"><span>1 Bulan</span><span>13K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>20K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- YOUTUBE -->
-    <div class="card">
-      <h2>YOUTUBE</h2>
-      <div class="package">Famplan</div>
-      <div class="price-row"><span>1 Bulan</span><span>10K</span></div>
-      <div class="price-row"><span>2 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-      <div class="package">Idnplan & Mixplan</div>
-      <div class="price-row"><span>1 Bulan</span><span>15K</span></div>
-      <div class="price-row"><span>3 Bulan</span><span>30K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- APPLE MUSIC -->
-    <div class="card">
-      <h2>APPLE MUSIC</h2>
-      <div class="package">Famplan</div>
-      <div class="price-row"><span>1 Bulan</span><span>23K</span></div>
-      <div class="price-row"><span>2 Bulan</span><span>30K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-
-    <!-- REMINI PRO -->
-    <div class="card">
-      <h2>REMINI</h2>
-      <div class="package">Sharing Web</div>
-      <div class="price-row"><span>1 Bulan</span><span>20K</span></div>
-      <div class="price-row"><span>2 Bulan</span><span>25K</span></div>
-      <div class="package">Private Web</div>
-      <div class="price-row"><span>1 Bulan</span><span>25K</span></div>
-      <div class="package">Android (no web)</div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-    </div>
-
-    <!-- ALIGHTMOTION -->
-    <div class="card">
-      <h2>ALIGHTMOTION</h2>
+      <div class="price-row"><span>1 Bulan</span><span>16K</span></div>
       <div class="package">Private</div>
-      <div class="price-row"><span>6 Bulan (andro/IOS)</span><span>15K</span></div>
-      <div class="price-row"><span>1 Tahun (IOS)</span><span>30K</span></div>
-      <div class="price-row"><span>1 Tahun (andro)</span><span>30K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>40K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+    <!-- SPOTIFY -->
+    <div class="card">
+      <h2>SPOTIFY</h2>
+      <div class="package">Indplan</div>
+      <div class="price-row"><span>1 Bulan</span><span>30K</span></div>
+      <div class="package">Famplan</div>
+      <div class="price-row"><span>1 Bulan</span><span>25K</span></div>
+      <div class="price-row"></span><span></span></div>
+    </div>
+
+    <!-- Disney + -->
+    <div class="card">
+      <h2>DISNEY +</h2>
       <div class="package">Sharing</div>
-      <div class="price-row"><span>12 Bulan (andro/IOS)</span><span>20K</span></div>
-    </div>
-
-    <!-- LIGHTROOM -->
-    <div class="card">
-      <h2>LIGHTROOM</h2>
-      <div class="package">Sharing</div>
-      <div class="price-row"><span>12 Bulan</span><span>25K</span></div>
-    </div>
-
-    <!-- VSCO -->
-    <div class="card">
-      <h2>VSCO</h2>
-      <div class="package">Sharing Plus</div>
-      <div class="price-row"><span>12 Bulan</span><span>21K</span></div>
-      <div class="package">Sharing Andro</div>
-      <div class="price-row"><span>6 Bulan</span><span>19K</span></div>
+      <div class="price-row"><span>1 Bulan</span><span>8K</span></div>
+      <div class="price-row"><span>3 Bulan</span><span>10K</span></div>
+      <div class="price-row"><span>12 Bulan</span><span>17K</span></div>
       <div class="price-row"></span><span></span></div>
     </div>
+</div>
 
-    <!-- IBIS PAINT -->
-    <div class="card">
-      <h2>IBIS PAINT</h2>
-      <div class="package">Sharing (IOS/andro)</div>
-      <div class="price-row"><span>12 Bulan</span><span>30K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+<div class="footer">
+  © 2025 Hajimemashoo. All rights reserved.
+</div>
 
-    <!-- DAZZCAM -->
-    <div class="card">
-      <h2>DAZZCAM</h2>
-      <div class="price-row"><span>Lifetime (IOS)</span><span>15K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+<script>
+const searchInput = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearBtn");
+const container = document.querySelector(".container");
+const cards = Array.from(document.querySelectorAll(".card"));
 
-    <!-- GETCONTACT -->
-    <div class="card">
-      <h2>GETCONTACT</h2>
-      <div class="price-row"><span>1 Bulan (Private)</span><span>18K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+function removeHighlight() {
+  cards.forEach(card => {
+    card.querySelectorAll("mark").forEach(m => {
+      m.replaceWith(m.innerText);
+    });
+  });
+}
 
-    <!-- IFAKE -->
-    <div class="card">
-      <h2>IFAKE</h2>
-      <div class="price-row"><span>Lifetime (andro)</span><span>18K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
+function highlight(el, keyword) {
+  const regex = new RegExp(`(${keyword})`, "gi");
+  el.innerHTML = el.innerText.replace(regex, "<mark>$1</mark>");
+}
 
-    <!-- WATTPAD -->
-    <div class="card">
-      <h2>WATTPAD</h2>
-      <div class="package">Sharing</div>
-      <div class="price-row"><span>1 Bulan</span><span>10K</span></div>
-      <div class="price-row"><span>6 Bulan</span><span>20K</span></div>
-      <div class="price-row"><span>12 Bulan</span><span>25K</span></div>
-      <div class="price-row"></span><span></span></div>
-    </div>
-  </div>
+searchInput.addEventListener("input", function () {
+  const keyword = this.value.trim().toLowerCase();
+  removeHighlight();
 
-  <div class="footer">
-    © 2025 Hajimemashoo. All rights reserved.
-  </div>
+  let matched = [];
+  let unmatched = [];
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    if (keyword && text.includes(keyword)) {
+      card.style.display = "block";
+      matched.push(card);
+
+      card.querySelectorAll("h2, .package, .price-row span")
+        .forEach(el => highlight(el, keyword));
+    } else if (!keyword) {
+      card.style.display = "block";
+      unmatched.push(card);
+    } else {
+      card.style.display = "none";
+      unmatched.push(card);
+    }
+  });
+
+  container.innerHTML = "";
+  matched.forEach(c => container.appendChild(c));
+  unmatched.forEach(c => container.appendChild(c));
+
+  if (matched.length) {
+    matched[0].scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  removeHighlight();
+
+  cards.forEach(card => {
+    card.style.display = "block";
+    container.appendChild(card);
+  });
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
 </body>
 </html>
-
-
-
-
